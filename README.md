@@ -563,3 +563,39 @@ python -m pytest -v --html=report.html --self-contained-html
 ```
 
 The CI pipeline runs tests against the public Restful Booker demo API. Because the API is shared and externally hosted, transient network failures or changes to sandbox state can affect individual runs.
+
+
+## Continuous Integration Results
+
+The project uses GitHub Actions to execute the automated API test suite.
+
+### Latest Verified Execution
+
+| Metric                | Result                  |
+| --------------------- | ----------------------- |
+| Execution environment | GitHub Actions          |
+| Operating system      | Linux                   |
+| Python version        | 3.12.15                 |
+| Total tests           | 18                      |
+| Passed                | 18                      |
+| Failed                | 0                       |
+| Errors                | 0                       |
+| Execution time        | Approximately 6 seconds |
+
+### Automated Test Coverage
+
+The CI pipeline executes tests covering:
+
+* Authentication recovery for HTTP 401 and 403 responses.
+* Token caching, invalidation, expiration, and concurrent generation.
+* Booking creation and retrieval.
+* Booking schema and date validation.
+* Duplicate date-range behavior.
+* Concurrent updates to the same booking.
+* Recovery from missing bookings.
+* PUT idempotency.
+* PATCH field preservation.
+
+A self-contained HTML report is generated during the workflow and uploaded as a workflow artifact.
+
+The public Restful Booker API is a shared test environment. Results may vary if the service becomes unavailable or its state changes.
