@@ -1,0 +1,25 @@
+# Python cache
+
+**pycache**/
+*.py[cod]
+.pytest_cache/
+
+# Virtual environments
+
+.venv/
+venv/
+env/
+
+# Environment variables and local secrets
+
+.env
+.env.*
+
+# IDE configuration
+
+.idea/
+
+# Generated test reports
+
+report.html
+report.htm
